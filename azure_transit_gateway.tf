@@ -24,7 +24,7 @@ resource "azurerm_network_security_rule" "allow_ssh_rule" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "22"
-  source_address_prefix       = "0.0.0.0/0" # You can change this to a more specific address or range
+  source_address_prefix       = "0.0.0.0/0" 
   destination_address_prefix  = "*"
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.security_group_mark.name
@@ -38,7 +38,7 @@ resource "azurerm_network_security_rule" "allow_ping_rule" {
   protocol                    = "Icmp"
   source_port_range           = "*"
   destination_port_range      = "*"
-  source_address_prefix       = "0.0.0.0/0" # You can change this to a more specific address or range
+  source_address_prefix       = "0.0.0.0/0" 
   destination_address_prefix  = "*"
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.security_group_mark.name
@@ -223,8 +223,8 @@ resource "azurerm_linux_virtual_machine" "virtual_machine_hub" {
   ]
   size                            = "Standard_B1ls"
   admin_username                  = var.vm_username
-  admin_password                  = var.vm_password # Password
-  disable_password_authentication = false           # Disable SSH so Text Password can be used
+  admin_password                  = var.vm_password 
+  disable_password_authentication = false         
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -301,8 +301,8 @@ resource "azurerm_linux_virtual_machine" "virtual_machine_1" {
   ]
   size                            = "Standard_B1ls"
   admin_username                  = var.vm_username
-  admin_password                  = var.vm_password # Password
-  disable_password_authentication = false           # Disable SSH so Text Password can be used
+  admin_password                  = var.vm_password
+  disable_password_authentication = false         
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -383,8 +383,8 @@ resource "azurerm_linux_virtual_machine" "virtual_machine_2" {
   ]
   size                            = "Standard_B1ls"
   admin_username                  = var.vm_username
-  admin_password                  = var.vm_password # Password
-  disable_password_authentication = false           # Disable SSH so Text Password can be used
+  admin_password                  = var.vm_password
+  disable_password_authentication = false           
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
