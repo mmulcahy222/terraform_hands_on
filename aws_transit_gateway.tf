@@ -184,7 +184,7 @@ resource "aws_instance" "ec2_vpc_1_subnet_1" {
   ami                         = "ami-051f7e7f6c2f40dc1"
   subnet_id                   = aws_subnet.subnet_1.id
   instance_type               = "t2.micro"
-  key_name                    = "key_pair_2023" # Replace with the name of your key pair in AWS
+  key_name                    = "key_pair_2023" 
   vpc_security_group_ids      = [aws_security_group.allow_ssh_group_vpc_1.id]
   associate_public_ip_address = true
 }
@@ -192,7 +192,7 @@ resource "aws_instance" "ec2_vpc_2_subnet_2" {
   ami                         = "ami-051f7e7f6c2f40dc1"
   subnet_id                   = aws_subnet.subnet_2.id
   instance_type               = "t2.micro"
-  key_name                    = "key_pair_2023" # Replace with the name of your key pair in AWS
+  key_name                    = "key_pair_2023" 
   vpc_security_group_ids      = [aws_security_group.allow_ssh_group_vpc_2.id]
   associate_public_ip_address = true
 }
